@@ -1,5 +1,6 @@
 package com.tom.bmi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -27,11 +28,19 @@ class MainActivity : AppCompatActivity() {
         val height = ed_height.text.toString().toFloat()
         val bmi = weight / (height * height)
         Log.d("BMI", bmi.toString())
-        Toast.makeText(this,bmi.toString(), Toast.LENGTH_LONG).show()
+        /*val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("BMI_EXTRA", bmi)
+        startActivity(intent)*/
+        Intent(this, ResultActivity::class.java).apply{
+            putExtra("BMI_EXTRA", bmi)
+            startActivity(this)
+        }
+
+        /*Toast.makeText(this,bmi.toString(), Toast.LENGTH_LONG).show()
         AlertDialog.Builder(this)
             .setMessage(bmi.toString())
             .setPositiveButton("OK", null)
             .setNeutralButton("Cancel", null)
-            .show()
+            .show()*/
     }
 }

@@ -5,4 +5,5 @@
     <string name="height">身高</string>
     <string name="calclate_bmi">計算 BMI</string>
     <string name="help">說明</string>
+    <string name="bmi_extra">BMI_EXTRA</string>
 </resources>
